@@ -2,7 +2,7 @@ const express = require('express');
 const debug = require('debug')('app');
 const path = require('path');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT;
 
 app.use(express.static(path.join(__dirname, "/pubilc/")));
 app.get("/", (req, res) => {
@@ -11,6 +11,6 @@ app.get("/", (req, res) => {
 
 })
 
-app.listen(port, () => {
-    debug("Listening on port ", port);
+app.listen(PORT, () => {
+    debug("Listening on port ", PORT);
 })
